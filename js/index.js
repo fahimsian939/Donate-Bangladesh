@@ -62,7 +62,7 @@
 
 
 // })
-
+// 1
 document.getElementById('donate-btn-1').addEventListener('click', function(e) {
     e.preventDefault();
     const donateInput1 = parseFloat(document.getElementById('donate-input-1').value);
@@ -82,7 +82,8 @@ document.getElementById('donate-btn-1').addEventListener('click', function(e) {
         if (floatCoinDonateAmount < donateInput1) {
             alert('Donation amount is greater than the account balance');
             document.getElementById('my_modal_1').close();
-        } else {
+        }
+         else {
             // Input section code
             let floatDonateBalance = parseFloat(donateBalance1.innerText);
             let totalDonate = donateInput1 + floatDonateBalance;
@@ -90,6 +91,24 @@ document.getElementById('donate-btn-1').addEventListener('click', function(e) {
 
             let afterTotalDonate = floatCoinDonateAmount - donateInput1;
             coinDonateAmount.innerText = afterTotalDonate;
+
+
+
+// history section code 
+const donationSubject = document.getElementById('donation-subject-1').innerText;
+const historyItem = document.createElement("div");
+
+historyItem.className ="bg-white rounded-lg border border-[#e8e8e8] p-6 border-2 shadow-sm ";
+
+historyItem.innerHTML= `
+<p class="font-bold px-3 py-2 "> ${donateInput1} Taka is donated for ${donationSubject}</p>
+<p class="text-pText px-3 "> Date: ${new Date()}</p>`;
+
+const historyContainer = document.getElementById("history-box");
+historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+// history section code 
+
+
         }
     }
 });
@@ -98,7 +117,7 @@ document.getElementById('donate-btn-1').addEventListener('click', function(e) {
 
 
 
-
+// 2
 
 
 document.getElementById('donate-btn-2').addEventListener('click', function(e){
@@ -134,7 +153,7 @@ document.getElementById('donate-btn-2').addEventListener('click', function(e){
 
 
         // history section code 
-        const donationSubject = document.getElementById('donation-subject').innerText;
+        const donationSubject = document.getElementById('donation-subject-2').innerText;
         const historyItem = document.createElement("div");
     
         historyItem.className ="bg-white rounded-lg border border-[#e8e8e8] p-6 border-2 shadow-sm ";
@@ -190,7 +209,7 @@ document.getElementById('donate-btn-3').addEventListener('click', function(e){
 
 
         // history section code 
-        const donationSubject = document.getElementById('donation-subject').innerText;
+        const donationSubject = document.getElementById('donation-subject-3').innerText;
         const historyItem = document.createElement("div");
     
         historyItem.className ="bg-white rounded-lg border border-[#e8e8e8] p-6 border-2 shadow-sm ";
